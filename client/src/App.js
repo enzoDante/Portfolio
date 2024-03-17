@@ -5,27 +5,25 @@ import { ThemeProvider } from 'styled-components';
 import { CSSGeral } from './Components/GlobalStyles/CSSGeral';
 
 function App() {
-  const {mode} = useContext(ThemeContexto);
+    const {mode} = useContext(ThemeContexto);
 
 
-  return (
-    <Router>
-      <ThemeProvider theme={mode? darkTheme : lightTheme}>
-        <CSSGeral />
+    return (
+        <Router>
+            <ThemeProvider theme={mode? darkTheme : lightTheme}>
+                <CSSGeral />
 
-
-
-        <Routes>
-          <Route exact='true' path='/'></Route>
-          {/* 
-          <Route path='/Sobre'></Route>
-          <Route path='/Blog' element={<Blog />}></Route>
-          <Route path='/Contato'></Route>
-           */}
-        </Routes>
-      </ThemeProvider>
-    </Router>
-  );
+                <Routes>
+                    <Route exact='true' path='/'></Route>
+                    {/* 
+                    <Route path='/Sobre'></Route>
+                    <Route path='/Blog' element={<Blog />}></Route>
+                    <Route path='/Contato'></Route>
+                    */}
+                </Routes>
+            </ThemeProvider>
+        </Router>
+    );
 }
 
 export default App;
