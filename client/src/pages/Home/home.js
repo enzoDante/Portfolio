@@ -38,6 +38,7 @@ const StyledMainBody = styled.main`
     }
 
     @media (max-width: 900px){
+        max-width: 100vw;
         header{
             display: block;
             margin-bottom: 20px;
