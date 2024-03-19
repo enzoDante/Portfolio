@@ -36,15 +36,25 @@ const StyledMainBody = styled.main`
         font-size: 1.1em;
         color: ${({theme}) => theme.textDefault || 'black'};
     }
+
+    @media (max-width: 900px){
+        header{
+            display: block;
+            margin-bottom: 20px;
+            div#foto{
+                text-align: center;
+            }
+            h1{
+                font-size: 1.5em;
+            }
+            p{
+                font-size: 1em;
+            }
+        }
+    }
 `;
 
 export default function Home(){
-    // const [p1Expandido, setP1Expandido] = useState(false);
-
-    // const AlterarP1 = () => {
-    //     setP1Expandido(!p1Expandido);
-    // }
-
     const [expandido, setExpandido] = useState({ p1: false, p2: false });
 
     const AlterarExpansao = (div) => {
@@ -73,9 +83,10 @@ export default function Home(){
             </header>
             <StyledMain>
                 <div>
-                    <h2>Principais Linguagens 
+                    <div className="a">
+                        <h2>Principais Linguagens</h2>
                         <span id="explp" onClick={() => {AlterarExpansao('p1')}}>{expandido.p1 ? 'Recolher' : 'Expandir'}</span>
-                    </h2>
+                    </div>
                     <article id="linguagens" className={articleExpandida}>
                         <div>
                             <img src="/images/linguagens/icons8-javascript-240.png" alt="" />
@@ -105,9 +116,10 @@ export default function Home(){
                 </div>
 
                 <div>
-                    <h2>Principais Ferramentas, banco de dados e ambientes de desenvolvimento
-                        <span id="explp2" onClick={() => {AlterarExpansao('p2')}}>{expandido.p2 ? 'Recolher' : 'Expandir'}</span>
-                    </h2>
+                    <div className="a">
+                        <h2>Principais Ferramentas, banco de dados e ambientes de desenvolvimento</h2>
+                        <span id="explp" onClick={() => {AlterarExpansao('p2')}}>{expandido.p2 ? 'Recolher' : 'Expandir'}</span>
+                    </div>
                     <article id="linguagens" className={article2Expandida}>
                         <div>
                             <img src="/images/ferramentas/node.png" alt="" />

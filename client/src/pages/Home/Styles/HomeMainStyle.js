@@ -1,31 +1,40 @@
 import styled from "styled-components";
 
 export const StyledMain = styled.main`
-    min-height: 50vh;
+    min-height: 70vh;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
     div{
         background-color: ${({theme}) => theme.backgroundForTitulo2 || 'black'};
     }
 
+    .a{
+        position: relative;
+        display: flex;
+        background-color: ${({theme}) => theme.backgroundTitulo2 || 'black'};
+        align-items: center;
+    }
     h2{
+        position: relative;
+        display: inline-block;
         font-family: 'Roboto', sans-serif;
         color: ${({theme}) => theme.textDefault || 'black'};
         padding-left: 20px;
         padding: 20px;
-        background-color: ${({theme}) => theme.backgroundTitulo2 || 'white'};
+        /* max-width: 800px; */
+        /* background-color: red; */
+        /* background-color: ${({theme}) => theme.backgroundTitulo2 || 'white'}; */
+
         margin-bottom: -15px;
+        flex: 2;
     }
     #explp{
+        height: 30px;
+        font-family: 'Roboto', sans-serif;
+        color: ${({theme}) => theme.textDefault || 'black'};
         cursor: pointer;
-        margin-left: 45vw;
-        border-bottom-style: solid;
-        transition: linear 200ms;
-        padding: 10px;
-        border-radius: 5px;
-    }
-    #explp2{
-        position: absolute;
-        cursor: pointer;
-        margin-left: 15vw;
+        /* margin-left: 45vw; */
+        margin-right: 5vw;
         border-bottom-style: solid;
         transition: linear 200ms;
         padding: 10px;
@@ -46,6 +55,7 @@ export const StyledMain = styled.main`
     }
 
     article#linguagens{
+        position: relative;
         /* justify-content: space-between; */
         display: flex;
         flex-wrap: wrap;
@@ -55,7 +65,7 @@ export const StyledMain = styled.main`
         min-width: 200px;
         /* min-height: 17vh; */        
         overflow: hidden;
-        margin-bottom: 5px;
+        margin-top: 10px;
         /* cursor: pointer; */
         transition: height 0.3s ease;
 
@@ -72,4 +82,21 @@ export const StyledMain = styled.main`
     }
     
 
+
+    @media (max-width: 900px){
+        article#linguagens{
+
+            div img{
+                width: 50px;
+            }
+        }
+    }
+    @media (max-width: 1200px){
+        h2{
+            font-size: 1.3em;
+        }
+        #explp{
+            height: 20px;
+        }
+    }
 `;

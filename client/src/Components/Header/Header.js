@@ -68,6 +68,12 @@ const StyledNav = styled.nav`
     padding: 10px;
     min-width: 300px;
     justify-content: space-between;
+    @media (max-width: 800px){
+        margin-top: 80px;
+        margin-left: -50px;
+        min-width: 100px;
+        padding: 0px;
+    }
 `;
 function Navegar(){
 
