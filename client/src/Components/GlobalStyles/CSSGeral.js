@@ -2,6 +2,7 @@ import {createGlobalStyle} from 'styled-components'
 
 export const CSSGeral = createGlobalStyle`
     body{
+        margin: 0;
         background-color: ${({theme}) => theme.backgroundBase || '#dcf1f1'};
     }
     body::-webkit-scrollbar{

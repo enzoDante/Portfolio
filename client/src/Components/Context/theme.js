@@ -5,11 +5,14 @@ export const lightTheme = {
     background1: '#DBF2F9', // #EBF4F8
     background2: '#f0f0f0',
     textDefault: '#2C2738',
+    textDefault2: '#514766',
     textNavHover: '#B3B5F5',
     textNavHover2: '#026773',
     backgroundNav: '#2C2738',
     backgroundForm: '#F0F0E8',
-    backgroundTitulo: '#4678E8'
+    backgroundTitulo: '#4678E8',
+    backgroundTitulo2: '#DEDEDE',
+    backgroundForTitulo2: '#C2C2C2'
 }
 
 export const darkTheme = {
@@ -17,11 +20,14 @@ export const darkTheme = {
     background1: '#1C2025',
     background2: '#313131',
     textDefault: '#D6E1DF',
+    textDefault2: '#CCE1DF',
     textNavHover: '#024959',
     textNavHover2: '#75BDDF',
     backgroundNav: 'white',
     backgroundForm: '#202020',
-    backgroundTitulo: '#112838'
+    backgroundTitulo: '#112838',
+    backgroundTitulo2: '#3D3D3D',
+    backgroundForTitulo2: '#474747'
 }
 
 export const ThemeContexto = createContext({
@@ -30,7 +36,7 @@ export const ThemeContexto = createContext({
 })
 
 export default function ThemeProvider({children}){
-    const [mode, setMode] = useState(false);
+    const [mode, setMode] = useState(true);
 
     const ContextValue = {
         mode: mode,
