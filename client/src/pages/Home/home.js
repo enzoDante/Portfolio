@@ -39,13 +39,24 @@ const StyledMainBody = styled.main`
 `;
 
 export default function Home(){
-    const [p1Expandido, setP1Expandido] = useState(false);
+    // const [p1Expandido, setP1Expandido] = useState(false);
 
-    const AlterarP1 = () => {
-        setP1Expandido(!p1Expandido);
-    }
+    // const AlterarP1 = () => {
+    //     setP1Expandido(!p1Expandido);
+    // }
 
-    const articleExpandida = p1Expandido ? "Expandida" : "nExpandida";
+    const [expandido, setExpandido] = useState({ p1: false, p2: false });
+
+    const AlterarExpansao = (div) => {
+        setExpandido(prevState => ({
+        ...prevState,
+        [div]: !prevState[div]
+        }));
+    };
+
+
+    const articleExpandida = expandido.p1 ? "Expandida" : "nExpandida";
+    const article2Expandida = expandido.p2? 'Expandida' : 'nExpandida';
 
     return(
         <StyledMainBody>
@@ -62,8 +73,10 @@ export default function Home(){
             </header>
             <StyledMain>
                 <div>
-                    <h2>Principais Linguagens</h2>
-                    <article id="linguagens" className={articleExpandida} onClick={AlterarP1}>
+                    <h2>Principais Linguagens 
+                        <span id="explp" onClick={() => {AlterarExpansao('p1')}}>{expandido.p1 ? 'Recolher' : 'Expandir'}</span>
+                    </h2>
+                    <article id="linguagens" className={articleExpandida}>
                         <div>
                             <img src="/images/linguagens/icons8-javascript-240.png" alt="" />
                         </div>
@@ -92,8 +105,10 @@ export default function Home(){
                 </div>
 
                 <div>
-                    <h2>Principais Ferramentas, banco de dados e ambientes de desenvolvimento</h2>
-                    <article id="linguagens">
+                    <h2>Principais Ferramentas, banco de dados e ambientes de desenvolvimento
+                        <span id="explp2" onClick={() => {AlterarExpansao('p2')}}>{expandido.p2 ? 'Recolher' : 'Expandir'}</span>
+                    </h2>
+                    <article id="linguagens" className={article2Expandida}>
                         <div>
                             <img src="/images/ferramentas/node.png" alt="" />
                         </div>
