@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { StyledLink } from "../../Components/GlobalStyles/LinkStyles";
 import { StyledMain } from "./Styles/HomeMainStyle";
 import { useState } from "react";
+import Carrosel from "./Components/carrosel";
 
 const StyledMainBody = styled.main`
     margin: auto;
@@ -146,6 +147,10 @@ export default function Home(){
                         </div>
                     </article>
                 </div>
+
+
+                <Carrosel />
+
             </StyledMain>
         </StyledMainBody>
     )

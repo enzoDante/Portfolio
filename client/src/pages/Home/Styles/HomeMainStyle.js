@@ -80,9 +80,6 @@ export const StyledMain = styled.main`
             width: 150px;
         }
     }
-    
-
-
     @media (max-width: 900px){
         article#linguagens{
 
