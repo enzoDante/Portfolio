@@ -40,7 +40,8 @@ export default function Header(){
 
     return(
         <StyledHeader>
-            <Logo />
+            {/* <Logo /> */}
+            <div></div>
             <Navegar />
             <AlterarTheme mode={mode} setMode={setMode} />
         </StyledHeader>

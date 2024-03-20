@@ -35,6 +35,7 @@ const StyledMainBody = styled.main`
         text-indent: 2em;
         font-size: 1.1em;
         color: ${({theme}) => theme.textDefault || 'black'};
+        text-align: justify;
     }
 
     @media (max-width: 900px){
