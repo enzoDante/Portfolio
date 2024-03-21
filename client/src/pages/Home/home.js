@@ -145,6 +145,12 @@ export default function Home(){
                         <div>
                             <img src="/images/ferramentas/visual-studio-code-2019.png" alt="" />
                         </div>
+                        <div>
+                            <img src="/images/ferramentas/git.png" alt="" />
+                        </div>
+                        <div>
+                            <img src="/images/ferramentas/arquivo-json.png" alt="" />
+                        </div>
                     </article>
                 </div>
 

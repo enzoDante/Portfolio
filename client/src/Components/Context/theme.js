@@ -12,7 +12,9 @@ export const lightTheme = {
     backgroundForm: '#F0F0E8',
     backgroundTitulo: '#4678E8',
     backgroundTitulo2: '#DEDEDE',
-    backgroundForTitulo2: '#C2C2C2'
+    backgroundForTitulo2: '#C2C2C2',
+    backgroundCarrousel: '#BFBFBF',
+    backgroundSpanOpaci: '#BFBFBFD0'
 }
 
 export const darkTheme = {
@@ -27,7 +29,9 @@ export const darkTheme = {
     backgroundForm: '#202020',
     backgroundTitulo: '#112838',
     backgroundTitulo2: '#3D3D3D',
-    backgroundForTitulo2: '#474747'
+    backgroundForTitulo2: '#474747',
+    backgroundCarrousel: '#1D1D1D',
+    backgroundSpanOpaci: '#1D1D1DD0'
 }
 
 export const ThemeContexto = createContext({

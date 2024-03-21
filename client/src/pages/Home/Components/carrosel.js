@@ -1,16 +1,63 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+import axios from 'axios'
+import jsonData from './projetosQuentes.json'; 
 
 const StyledCarrosel = styled.div`
     div#carrosel{
+        background-color: ${({theme}) => theme.backgroundForm};
+        position: relative;
+        /* background-color: red; */
         .element{
+            position: relative;
             transition: opacity 0.5s ease;
             /* display: none; */
             display: block;
+            margin: auto;
+            width: 900px;
+            background-color: ${({theme}) => theme.backgroundCarrousel};
             
             /* max-width: 200px; */
-            height: 150px;
-            background-color: blue;
+            /* min-height: 150px; */
+            height: 500px;
+            /* background-color: blue; */
+            text-align: center;
+            img{
+                height: 400px;
+                /* opacity: 0.7; */
+            }
+            #resumoA{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                font-size: 1.1em;
+                color: white;
+                font-weight: bold;
+                font-family: 'Roboto', sans-serif;
+                background-color: ${({theme}) => theme.backgroundSpanOpaci};
+            }
+            #resumoA p{
+                text-align: justify;
+                padding: 15px;
+            }
+
+            #resumoU{
+                display: flex;
+                background-color: ${({theme}) => theme.backgroundCarrousel};
+                height: 410px;
+                align-items: center;
+                p{
+                    padding: 20px;
+                    color: ${({theme}) => theme.textDefault};
+                    font-weight: bold;
+                    font-family: 'Roboto', sans-serif;
+                }
+            }
 
         }
         .normal {
@@ -28,15 +75,17 @@ const StyledCarrosel = styled.div`
 export default function Carrosel(){
 
     const [imagens, setImagens] = useState(['red', 'green', 'blue', 'purple']);
+    const [teste, setTeste] = useState(jsonData);
     const [i, setI] = useState(0);
     const [transitioning, setTransitioning] = useState(false);
 
     useEffect(() => {
-        const interval = setInterval(() => {
+        const interval = setInterval(async () => {
             setTransitioning(true); // Ativa o efeito de transição
 
             setTimeout(() => {
-                setI(prevCount => (prevCount + 1) % imagens.length); // Incrementa o contador e reinicia se necessário
+                setI(prevCount => (prevCount + 1) % teste.length); //teste.json
+                // setI(prevCount => (prevCount + 1) % imagens.length); // Incrementa o contador e reinicia se necessário
                 setTransitioning(false); // Desativa o efeito de transição após um curto período de tempo
             }, 300);
             // setI(prevCount => {
@@ -54,16 +103,19 @@ export default function Carrosel(){
         <StyledCarrosel>
             <h2>abaixo terá o carosel</h2>
             <div id="carrosel">
-                <div className={transitioning ? "element transicao imagem" : "element normal imagem"}> <p>Contador: {i}</p> <p>{imagens[i]}</p> </div>
+                <div className={transitioning ? "element transicao imagem" : "element normal imagem"}>
+                    {teste[i]?.url ? (
+                        <>
+                            <img src={teste[i].url} alt="aaa" />
+                            {teste[i]?.resumo && <span id="resumoA"><p>{teste[i].resumo}</p></span>}
+                        </>
+                    ) : (<div id="resumoU"><p>{teste[i].resumo}</p></div>)}
+
+
+                    {/* <p>Contador: {i}</p> */}
+
+                </div>
                 
-
-                {/* {imagens.map((a) => {
-
-
-                    return (
-                        <div className="element"> {a} </div>
-                    )
-                })} */}
 
             </div>
 
