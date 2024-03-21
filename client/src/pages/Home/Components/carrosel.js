@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import axios from 'axios'
 import jsonData from './projetosQuentes.json'; 
 
 const StyledCarrosel = styled.div`
