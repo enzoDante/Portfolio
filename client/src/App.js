@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { CSSGeral } from './Components/GlobalStyles/CSSGeral';
 import Header from './Components/Header/Header';
 import Home from './pages/Home/home';
+import Sobre from './pages/Sobre/Sobre';
 
 function App() {
     const {mode} = useContext(ThemeContexto);
@@ -17,7 +18,7 @@ function App() {
 
                 <Routes>
                     <Route exact='true' path='/' element={<Home />}></Route>
-                    <Route path='/Sobre'></Route>
+                    <Route path='/Sobre' element={<Sobre />}></Route>
                     <Route path='/Projetos'></Route>
                     {/* 
                     <Route path='/Sobre'></Route>

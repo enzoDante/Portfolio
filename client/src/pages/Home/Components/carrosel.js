@@ -6,6 +6,7 @@ const StyledCarrosel = styled.div`
     div#carrosel{
         background-color: ${({theme}) => theme.backgroundForm};
         position: relative;
+        /* max-width: 1000px; */
         /* background-color: red; */
         .element{
             position: relative;
@@ -65,6 +66,12 @@ const StyledCarrosel = styled.div`
 
         .transicao {
             opacity: 0.5; /* Define a opacidade inicial para 0 */
+        }
+    }
+    @media (max-width: 900) {
+        div#carrosel{
+            max-width: 600px;
+            background-color: red;
         }
     }
 
